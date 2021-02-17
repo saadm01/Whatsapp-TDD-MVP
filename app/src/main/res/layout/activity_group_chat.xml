@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
+    tools:context=".GroupChatActivity">
+
+    <include
+        android:id="@+id/group_chat_bar"
+        layout="@layout/app_bar_layout">
+    </include>
+
+    <ScrollView
+        android:id="@+id/scrollViewGroups"
+        android:layout_above="@+id/layout_of_chats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/group_chat_bar">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="16sp"
+                android:text="Rules: \n- No Spam/Advertising/Self-promote in the forums
+                \n- Do not post “offensive” posts, links or images
+                \n- Remain respectful of other members at all times"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/messages_layout1">
+            </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/group_chat_text"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/messages_layout">
+            </TextView>
+
+
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout_of_chats"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/messages_layout">
+
+        <EditText
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/group_message"
+            android:hint="Type message..."
+            android:padding="17dp">
+        </EditText>
+
+        <ImageButton
+            android:id="@+id/send_group_message_button"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/send_message"
+            android:layout_marginLeft="20dp">
+        </ImageButton>
+
+    </LinearLayout>
+</RelativeLayout>
